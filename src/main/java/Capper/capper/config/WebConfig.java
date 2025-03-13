@@ -11,7 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**") // Apply CORS to all /api endpoints
-                .allowedOrigins("${origins}")  // Use the 'origins' property from application.properties
+                .allowedOrigins("http://localhost:5173", "https://your-frontend-url.vercel.app")  // Use the 'origins' property from application.properties
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowedHeaders("*");
     }
